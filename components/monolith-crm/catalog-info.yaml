@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: monolith-crm
+  description: Monolith service hosting most crm functionality
+spec:
+  type: service
+  lifecycle: production
+  owner: crm-team
+  system: customer-management
+  dependsOn:
+    - component:default/monolith-sql
+    - resource:default/crm
+    - resource:default/administration
+  providesApis:
+    - api:default/client
