@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: client
+  description: Retrieve and manage client details
+  tags:
+    - csharp
+spec:
+  type: openapi
+  lifecycle: production
+  owner: crm-team
+  system: customer-management
