@@ -1,0 +1,42 @@
+openapi: 3.0.3
+info:
+  title: Swagger Client
+  version: v2
+  description: Client API
+paths:
+  /clients/{clientId}:
+    get:
+      tags:
+        - client
+      summary: Gets a list of clients
+      operationId: getClient
+      description: Gets a single client
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          description: Id of the client to return
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client'
+        '400':
+          description: Invalid clientId
+        '404':
+          description: Not found
+components:
+  schemas:
+    Client:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
