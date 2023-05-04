@@ -10,3 +10,5 @@ spec:
   lifecycle: production
   owner: crm-team
   system: customer-management
+  definition:
+    $text: https://github.com/richardpitout/backstage-test/blob/services/client/swagger.yml
