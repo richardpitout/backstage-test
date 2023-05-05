@@ -3,6 +3,9 @@ kind: Component
 metadata:
   name: monolith-crm
   description: Monolith service hosting most crm functionality
+  tags:
+    - monolith
+    - csharp
 spec:
   type: service
   lifecycle: production
@@ -14,3 +17,4 @@ spec:
     - resource:default/administration
   providesApis:
     - api:default/client
+    - api:default/clientaddress

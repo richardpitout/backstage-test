@@ -5,6 +5,7 @@ metadata:
   description: Retrieve and manage client details
   tags:
     - csharp
+    - public
 spec:
   type: openapi
   lifecycle: production
