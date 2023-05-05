@@ -1,0 +1,52 @@
+openapi: 3.0.3
+info:
+  title: Swagger Client
+  version: v2
+  description: Client API
+paths:
+  /clients/{clientId}/addresses/{addressId}:
+    get:
+      tags:
+        - clientAddress
+      summary: Gets a clientAddress
+      operationId: getClientAddress
+      description: Gets a single client address
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          description: Id of the client
+          schema:
+            type: integer
+            format: int32
+        - name: addressId
+          in: path
+          required: true
+          description: Id of the address to get
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientAddress'
+        '400':
+          description: Invalid clientId
+        '404':
+          description: Not found
+components:
+  schemas:
+    ClientAddress:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        clientId:
+          type: integer
+          format: int32
